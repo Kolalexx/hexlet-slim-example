@@ -1,0 +1,23 @@
+<a href="/users">Пользователи</a>
+
+<form action="/users" method="post">
+  <div>
+    <label>
+        name
+      <input type="text" name="user[name]" value="<?= htmlspecialchars($userData['name']) ?>">
+    </label>
+    <?php if (isset($errors['name'])): ?>
+      <div><?= $errors['name'] ?></div>
+    <?php endif ?>
+  </div>
+  <div>
+    <label>
+        Email
+      <input type="email" required name="user[email]" value="<?= htmlspecialchars($userData['email']) ?>">
+    </label>
+    <?php if (isset($errors['email'])): ?>
+      <div><?= $errors['email'] ?></div>
+    <?php endif ?>
+  </div>
+  <input type="submit" value="Create">
+</form>

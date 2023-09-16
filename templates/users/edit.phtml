@@ -1,0 +1,15 @@
+<a href="/users">Пользователи</a>
+
+<form action="/users/<?= htmlspecialchars($user['id']) ?>" method="post">
+    <input type="hidden" name="_METHOD" value="PATCH">
+    <div>
+      <label>
+          name
+          <input type="text" name="user[name]" value="<?= htmlspecialchars($userData['name'] ?? '') ?>">
+      </label>
+      <?php if (isset($errors['name'])): ?>
+          <div><?= $errors['name'] ?></div>
+      <?php endif ?>
+    </div>
+    <input type="submit" value="Update">
+</form>

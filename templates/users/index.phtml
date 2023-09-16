@@ -1,0 +1,21 @@
+<?php if (count($flash) > 0) : ?>
+    <ul>
+    <?php foreach ($flash as $messages) : ?>
+        <?php foreach ($messages as $message) : ?>
+            <li><?= $message ?></li>
+        <?php endforeach ?>
+    <?php endforeach ?>
+    </ul>
+<?php endif ?>
+
+<table>
+  <?php foreach ($users as $user): ?>
+    <tr>
+      <td>
+          <a href="/users/<?= $user['id'] ?>"><?= $user['name'] ?></a>
+      </td>
+    </tr>
+  <?php endforeach ?>
+</table>
+
+<a href="/users/new">Добавить нового пользователя</a>
